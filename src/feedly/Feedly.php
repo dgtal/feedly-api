@@ -140,4 +140,17 @@ class Feedly
 
         return $response;
     }
+
+    public function storeDevToken($devToken)
+    {
+        $response = new AccessTokenResponse(
+            array(
+                'access_token' => $devToken,
+                'expires_in' => (time()+(30 * 24 * 60 * 60)))
+        );
+
+        $this->accessTokenStorage->store($response);
+
+        return $response;
+    }
 }
