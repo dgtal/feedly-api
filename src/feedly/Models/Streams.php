@@ -13,7 +13,7 @@ class Streams extends FeedlyModel
     {
         $query = http_build_query($input + ['streamId' => $ids]);
         return $this->getClient()
-            ->get($this->getApiBaseUrl() . $this->getEndpoint() . '/' . $data . '?' . $query);
+                    ->get($this->getApiBaseUrl() . $this->getEndpoint() . '/' . $data . '?' . $query);
     }
 
 }
